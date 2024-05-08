@@ -1,0 +1,29 @@
+.categories{
+    margin: 7rem 0rem;
+}
+.categoryList{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 4rem 0rem;
+}
+
+.category{
+    border: 1px solid var(--black);
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border-radius: 50px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+}
+
+.category:hover{
+    background-color: var(--black);
+    color: var(--white);
+    transition: .2s ease-in-out;
+}

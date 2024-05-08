@@ -1,0 +1,29 @@
+.Welcome{
+    margin: 4rem 0rem;
+}
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+
+.content{
+    flex: 1;
+}
+
+.content h1{
+    margin-bottom: 1rem;
+}
+
+.content p{
+  color: var(--black);
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.4em;
+  letter-spacing: 0.001em;
+  text-align: center;
+}

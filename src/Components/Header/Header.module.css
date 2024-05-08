@@ -1,0 +1,66 @@
+.header{
+    width: 100%;  
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 0rem;
+    /* border: 1px solid rgb(72, 1, 1); */
+}
+
+
+
+.wrapper{
+    margin: 0rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    gap: 1.5rem;
+}
+
+.logoPart{
+    flex: 1;
+    /* border: 1px solid red; */
+}
+
+.logo{
+    height: 5rem;
+}
+.buttonPart{
+    flex: 1;
+    /* border: 1px solid rgb(50, 3, 3); */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.btn{
+    color: var(--white);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    border: 2px solid black;
+    background-color: var(--black);
+    padding: 1rem 3rem;
+}
+
+.btn:hover{
+    background-color: var(--white);
+    color: var(--black);
+    transition: .5s ease-in-out;
+}
+
+/* Mobile Menu Icon  */
+.menuIcon{
+    font-size: 4rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .menuIcon{
+        display: flex;
+    }
+}
