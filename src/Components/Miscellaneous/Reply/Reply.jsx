@@ -3,6 +3,7 @@ import style from './Reply.module.css';
 import { BiLike, BiSolidLike } from "react-icons/bi";
 import CommentForm from '../CommentForm/CommentForm';
 import { useState } from 'react';
+import Comment_Skeleton from '../Comment/Comment_Skeleton';
 
 const Reply = () => {
 
@@ -10,11 +11,8 @@ const Reply = () => {
 
   return (
     <div className={style.commentWrapper}>
-        {/* Comment form */}
-       {/* <CommentForm/> */}
-        
-        {/* Comments */}
         <h6 className={style.heading}>4 Replies</h6>
+        <Comment_Skeleton/>
         <div className={style.comment}>
             <div className={style.userDetails}>
                 <div className={style.profilePic}>

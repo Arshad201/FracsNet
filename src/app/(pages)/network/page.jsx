@@ -7,6 +7,7 @@ import ShortInfo from "@/Components/Miscellaneous/ShortInfo/ShortInfo";
 import GroupCardSM from "@/Components/Miscellaneous/GroupCardSM/GroupCardSM";
 import BlogPostCardSM from "@/Components/Miscellaneous/BlogPostCardSM/BlogPostCardSM";
 import ProfileCardSM from "@/Components/Miscellaneous/ProfileCardSM/ProfileCardSM";
+import ShortInfo_Skeleton from "@/Components/Miscellaneous/ShortInfo/ShortInfo_Skeleton";
 
 const NetworkPage = () => {
   return (
@@ -18,6 +19,7 @@ const NetworkPage = () => {
             <div className={style.latestBlogPostWrapper}>
               <h2 className={style.heading}>Network requests</h2>
               <div className={style.latestBlogPost}>
+                <ShortInfo_Skeleton/>
                  <ShortInfo btn={"request"}/>
                  <ShortInfo btn={"request"}/>
                  <ShortInfo btn={"request"}/>

@@ -1,15 +1,15 @@
+import Link from 'next/link';
 import style from './BlogPostCardSM.module.css';
 
 const BlogPostCardSM = () => {
   return (
     <div className={style.BlogPostCardSM}>
         <div className={style.leftPart}>
-                {/* Profile Photo  */}
-                <div className={style.profileImgWrapper}>
+                <Link href={`/blog/slug`} className={style.profileImgWrapper}>
                     <img src="/profile.jpg" alt="" /> 
-                </div>
+                </Link>
                 <div className={style.metaData}>
-                    <span className={style.postedOn}>"Elite Programming Unveiled: Techniques, Tools, and Mindset"</span>
+                    <Link href={`/blog/slug`} className={style.blogTitle}>"Elite Programming Unveiled: Techniques, Tools, and Mindset"</Link>
                 </div>
         </div>
     </div>

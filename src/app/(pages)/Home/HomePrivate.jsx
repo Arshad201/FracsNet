@@ -7,6 +7,7 @@ import ShortInfo from "@/Components/Miscellaneous/ShortInfo/ShortInfo";
 import GroupCardSM from "@/Components/Miscellaneous/GroupCardSM/GroupCardSM";
 import BlogPostCardSM from "@/Components/Miscellaneous/BlogPostCardSM/BlogPostCardSM";
 import { Suspense } from "react";
+import BlogPostCardSM_Skeleton from "@/Components/Miscellaneous/BlogPostCardSM/BlogPostCardSM_Skeleton";
 
 const HomePrivate = () => {
   return (
@@ -28,14 +29,11 @@ const HomePrivate = () => {
             <UnlimitedScrollFeed />
           </div>
           <div className={style.rightContent}>
-
-
-
             {/* Latest Blogpost */}
             <div className={style.latestBlogPostWrapper}>
               <h2 className={style.heading}>Latest Blogpost</h2>
               <div className={style.latestBlogPost}>
-                <BlogPostCardSM />
+                <BlogPostCardSM_Skeleton />
                 <BlogPostCardSM />
                 <BlogPostCardSM />
                 <BlogPostCardSM />

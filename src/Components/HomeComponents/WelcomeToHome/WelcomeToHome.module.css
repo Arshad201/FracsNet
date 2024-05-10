@@ -41,6 +41,7 @@
     border: 2px solid rgb(0, 0, 0);
     border-radius: 20rem;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .features{
@@ -53,6 +54,8 @@
 }
 
 .feature{
+    color: var(--black);
+    text-decoration: none;
     flex: 1;
     display: flex;
     align-items: center;

@@ -74,7 +74,7 @@
     position: absolute;
     bottom: 1.5rem;
     right: 1.5rem;
-    padding: 1.5rem;
+    padding: 1.2rem;
     border: 2px solid var(--black);
     border: none;
     cursor: pointer;
@@ -84,7 +84,7 @@
 }
 
 .editIcon{
-    font-size: 2.2rem;
+    font-size: 1.7rem;
     color: var(--white);
 }
 

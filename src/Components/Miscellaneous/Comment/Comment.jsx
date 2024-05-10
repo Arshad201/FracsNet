@@ -4,6 +4,7 @@ import { BiLike, BiSolidLike } from "react-icons/bi";
 import CommentForm from '../CommentForm/CommentForm';
 import Reply from '../Reply/Reply';
 import { useState } from 'react';
+import Comment_Skeleton from './Comment_Skeleton';
 
 const Comment = () => {
 
@@ -11,10 +12,10 @@ const Comment = () => {
     const [showReply, setShowReply] = useState(false);
   return (
     <div className={style.commentWrapper}>
-        {/* Comment form */}
         
         {/* Comments */}
         <h6 className={style.heading}>4 Comments</h6>
+        <Comment_Skeleton/>
         <div className={style.comment}>
             <div className={style.userDetails}>
                 <div className={style.profilePic}>
