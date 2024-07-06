@@ -26,22 +26,46 @@
 
 .comment{
     border-left: 2px solid var(--black);
-    border-bottom: 2px solid var(--black);
+    /* border-bottom: 2px solid var(--black); */
     margin: 0rem 0rem 0rem 2rem;
     padding: 2rem 0rem 2rem 2rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
+    break-inside: avoid;
+    background-color: var(--white);
 }
 
 .userDetails{
-    /* border: 1px solid red; */
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.leftWrapper{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profileInfo{
+    display: flex;
+    flex-direction: column;
     gap: 0.5rem;
 }
 
+.postedOn{
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+}
+
 .userDetails .name{
+    color: var(--black);
     font-family: 'Outfit', sans-serif;
     font-size: 1.8rem;
     font-weight: 500;
@@ -49,24 +73,36 @@
     letter-spacing: 0.01em;
 }
 
+.repliedTo{
+    font-size: 1.7rem;
+    font-family: 'Outfit', sans-serif;
+    color: var(--black);
+}
+
 .commentBody{
 
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
 
 }
 
 .commentBody .text{
-    color: var(--black);
+  color: var(--black);
   font-family: 'Work Sans', sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.5em;
   letter-spacing: 0.001em;
+  width: fit-content;
+  background-color: rgb(232, 232, 232);
+  padding: 1rem;
+  border-radius: 1rem;
 }
 
-.commentBody .postedOn{
+
+
+.commentBody {
     font-family: 'Outfit', sans-serif;
     font-size: 1.6rem;
     font-weight: 500;
@@ -76,6 +112,7 @@
 
 .commentImg img{
     width: 80%;
+    border-radius: 1rem;
     
 }
 
@@ -96,6 +133,7 @@
     font-weight: 500;
     line-height: 1.2em;
     letter-spacing: 0.01em;
+    cursor: pointer;
 }
 
 .btn{
@@ -119,4 +157,24 @@
       cursor: pointer;
       background-color: transparent;
     color: var(--black);
+  }
+
+
+  .loadMorebtn{
+    color: rgb(255, 35, 35);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5em;
+    letter-spacing: 0.001em;
+    text-decoration: underline;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    margin: 1rem 0rem 0rem 4rem;
+  }
+
+  .loadingIcon{
+    color: var(--black);
+    margin: 1.5rem 0rem 0rem 4rem;
   }

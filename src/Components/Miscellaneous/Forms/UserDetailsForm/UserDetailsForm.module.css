@@ -1,11 +1,23 @@
-.Ud_form{
-    height: 100%;
+.Ud_form {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    background-color: var(--white);
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem 2rem;
 }
 
-.groupInputGroups{
+.formHeading{
+    color: var(--black);
+    font-family: 'Outfit', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+}
+
+.groupInputGroups {
     width: 100%;
     display: flex;
     align-items: center;
@@ -15,55 +27,56 @@
 }
 
 
-.inputGroup{
+.inputGroup {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    flex: 1;
+    width: 100%;
 }
 
-.inputGroup label{
+.inputGroup label {
     font-family: 'Outfit', sans-serif;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-weight: 600;
     line-height: 1.2em;
     letter-spacing: 0.01em;
 }
 
-.inputGroup input, .inputGroup textarea{
-  color: var(--black);
-  font-family: 'Work Sans', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 1.4em;
-  letter-spacing: 0.001em;
-  padding: 1rem 2rem;
-  border: 2px solid var(--black);
-  outline: none;
-  resize: none;
+.inputGroup input,
+.inputGroup textarea {
+    width: 100%;
+    color: var(--black);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.4em;
+    letter-spacing: 0.001em;
+    padding: 1rem 2rem;
+    border: 2px solid var(--black);
+    outline: none;
+    resize: none;
 }
 
 
-.Ud_form button{
+.Ud_form button {
     background-color: var(--black);
     color: var(--white);
     border: 2px solid var(--black);
-    
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
     cursor: pointer;
     font-family: 'Outfit', sans-serif;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: 400;
     line-height: 1.2em;
     letter-spacing: 0.01em;
     padding: 1.5rem;
 }
 
-.Ud_form button:hover{
+.Ud_form button:hover {
     background-color: var(--white);
-   color: var(--black);
+    color: var(--black);
     transition: .2s ease-in-out;
 }

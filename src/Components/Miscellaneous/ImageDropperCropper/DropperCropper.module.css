@@ -1,10 +1,11 @@
 
 .container {
-    border: 2px dashed var(--black);
-    height: 400px;
+    /* min-height: 400px; */
     width: 100%;
-    margin-top: 2rem;
     padding: 2rem;
+    background-color: var(--white);
+    border: 2px dashed var(--black);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
 
 .dropZone {
@@ -25,20 +26,21 @@
     letter-spacing: 0.01em;
     text-align: center;
     cursor: pointer;
-    padding: 2rem;
+    padding: 4rem 2rem;
 }
 
 .btnContainer {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 1rem;
     margin-top: 1.5rem;
 }
 
 .btn {
     font-family: 'Work Sans', sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 400;
     line-height: 1.4em;
     letter-spacing: 0.001em;
@@ -56,7 +58,6 @@
     transition: .2s ease-in-out;
     cursor: pointer;
 }
-
 
 @media only screen and (max-width: 768px) {
     .container {

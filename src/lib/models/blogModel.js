@@ -5,10 +5,28 @@ const blogPostSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  blogImage:{
-    type: String,
-    required: true
+  featuredImage: {
+    public_id: {
+      type: String,
+      default: "samplePublic_Id_1",
+    },
+    url: {
+      type: String,
+      default: "/heroImg.jpg"
+    }
   },
+  images: [
+    {
+      public_id: {
+        type: String,
+        default: "samplePublic_Id_1",
+      },
+      url: {
+        type: String,
+        default: "/heroImg.jpg"
+      }
+    }
+  ],
   slug: {
     type: String,
     required: true,
@@ -21,19 +39,26 @@ const blogPostSchema = new mongoose.Schema({
   },
   excerpt: {
     type: String,
-    required: true
+    required: true,
+    maxLength: 160
+  },
+  metaDescription: {
+    type: String,
+    required: true,
+    maxLength: 160
   },
   author: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true
   },
-  category:{
+  category: {
     type: String,
     default: "General"
   },
   tags: [{
-    type: String
+    type: String,
+    trim: true
   }],
   comments: [{
     type: mongoose.Schema.Types.ObjectId,

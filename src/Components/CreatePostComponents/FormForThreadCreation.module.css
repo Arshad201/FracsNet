@@ -1,31 +1,59 @@
-.FormForThreadCreation{
-    margin: 3rem 0rem;
+.FormForThreadCreation {
+    background-color: var(--white);
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    padding: 3rem 2rem;
 }
 
-.threadCreation{
+.threadCreation {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     margin-top: 2rem;
 }
 
-.body{
-    display: flex;
-    gap: 2rem;
+.subHeading {
+    color: var(--black);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 400;
+    line-height: 1.5em;
+    letter-spacing: 0.001em;
+    padding: 2rem 1rem;
+    text-align: center;
 }
 
-.formFeatures{
+
+.form {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+
+.hiddenInput {
+    display: none;
+}
+
+.formFeatures {
     /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.options{
+.formRightCol {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    gap: 1rem;
+}
+
+.options {
+    color: var(--black);
+    text-decoration: none;
+    display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 1rem;
     padding: 1rem;
     border: 2px solid var(--black);
@@ -33,53 +61,58 @@
     cursor: pointer;
 }
 
-.icons{
+.icons {
     font-size: 2rem;
 }
 
-.options span{
+.options span {
+    color: var(--black);
     font-family: 'Outfit', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 400;
     line-height: 1.2em;
     letter-spacing: 0.01em;
-    position: absolute;
-    color: var(--white);
-    background-color: var(--black);
     white-space: nowrap;
-    left: 100%;
     padding: 0.5rem 1rem;
-    display: none;
 }
 
-.options:hover span {
-    display: block;
+.activeOption {
+    background-color: var(--black);
+}
+
+.activeOption .icons {
+    color: var(--white);
+}
+
+.activeOption span {
+    color: var(--white);
 }
 
 
-.form{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.form textarea{
-    flex: 1;
+.form .threadTextInput,
+.form .ytInput {
     width: 100%;
     color: var(--black);
-  font-family: 'Work Sans', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 1.4em;
-  letter-spacing: 0.001em;
-  padding: 1rem 2rem;
-  border: 2px solid var(--black);
-  outline: none;
-  resize: none;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.4em;
+    letter-spacing: 0.001em;
+    padding: 1rem 2rem;
+    border: 2px solid var(--black);
+    outline: none;
+    resize: none;
 }
 
-.form button{
+.form .threadTextInput{
+    flex: 1;
+}
+
+.form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
     width: fit-content;
     background-color: var(--black);
     color: var(--white);
@@ -95,30 +128,30 @@
 }
 
 
-.userProfile{
+.userProfile {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-.profileImgWrapper{
+.profileImgWrapper {
     width: 6rem;
     height: 6rem;
     border-radius: 50px;
 }
 
-.profileImgWrapper img{
+.profileImgWrapper img {
     width: 100%;
     height: 100%;
     border-radius: 50px;
 }
 
-.metaData{
+.metaData {
     display: flex;
     flex-direction: column;
 }
 
-.userName{
+.userName {
     font-family: 'Outfit', sans-serif;
     font-size: 1.8rem;
     font-weight: 500;
@@ -126,10 +159,87 @@
     letter-spacing: 0.01em;
 }
 
-.postedOn{
+.postedOn {
     font-family: 'Outfit', sans-serif;
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 1.2em;
     letter-spacing: 0.01em;
+}
+
+.uploadedItems {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 2rem 0rem;
+}
+
+.uploadedItems .image {
+    position: relative;
+}
+
+.uploadedItems .image img {
+    height: 7rem;
+    border-radius: 2rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.crossIcon {
+    font-size: 3rem;
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    color: var(--white);
+    background-color: var(--black);
+    padding: 0.7rem;
+    border-radius: 5rem;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.video {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-right: 2rem;
+    background-color: rgb(255, 35, 35);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+}
+
+.uploadedItems .icon {
+    font-size: 3rem;
+    color: var(--white);
+}
+
+.fileName {
+    color: var(--white);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+}
+
+
+.file {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-right: 2rem;
+    background-color: rgb(255, 185, 7);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+}
+
+
+.dropZone{
+    border: 2px solid red;
+    height: 10rem;
 }

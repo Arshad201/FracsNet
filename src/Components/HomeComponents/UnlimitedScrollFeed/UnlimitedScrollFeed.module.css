@@ -12,11 +12,6 @@
 }
 
 
-.posts > div{
-    background-color: var(--white);
-    border: 1px solid rgba(128, 128, 128, 0.3);
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
-}
 
 .btn{
     color: var(--white);

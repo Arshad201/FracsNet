@@ -2,16 +2,19 @@ import style from './WelcomeToHome.module.css';
 import { MdOutlinePermMedia, MdOutlinePoll } from "react-icons/md";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import Link from 'next/link';
-import ProfileImageSkeleton from './ProfileImageSkeleton';
+import { formattingName } from '@/lib/utils/valueFormatting';
+import { get_loggedIn_user } from '@/lib/data/user';
 
-const WelcomeToHome = () => {
+const WelcomeToHome = async() => {
+
+  const user = await get_loggedIn_user();
+
   return (
     <div className={style.WelcomeToHome}>
-        <h1 className="sectionHeading">Welcome to FracsNet, Mohammad Arshad</h1>
+        <h1 className="sectionHeading">Welcome to FracsNet, {formattingName(user)}</h1>
         <div className={style.threadPostingCard}>
-            {/* <ProfileImageSkeleton/> */}
-            <Link href={"/"} className={style.profileImageBox}>
-                <img src="/profile.jpg" alt="" />
+            <Link href={`/profile/${user.userName}`} className={style.profileImageBox}>
+                <img src={user.profilePic.url} alt="" />
             </Link>
             <Link href={"/create"} className={style.pseudoForm}>
                 Post a thread to get answers very fast!

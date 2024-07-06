@@ -1,20 +1,14 @@
-.UE_form{
-    height: 100%;
+.Ud_form {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    background-color: var(--white);
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem 2rem;
 }
 
-.formOptions{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 2rem 0rem;
-}
-
-.groupInputGroups{
+.groupInputGroups {
     width: 100%;
     display: flex;
     align-items: center;
@@ -24,55 +18,116 @@
 }
 
 
-.inputGroup{
+.inputGroup {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    flex: 1;
+    width: 100%;
 }
 
-.inputGroup label{
+.formHeading{
+    color: var(--black);
     font-family: 'Outfit', sans-serif;
-    font-size: 1.7rem;
+    font-size: 2rem;
     font-weight: 600;
     line-height: 1.2em;
     letter-spacing: 0.01em;
 }
 
-.inputGroup input, .inputGroup textarea{
-  color: var(--black);
-  font-family: 'Work Sans', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 1.4em;
-  letter-spacing: 0.001em;
-  padding: 1rem 2rem;
-  border: 2px solid var(--black);
-  outline: none;
-  resize: none;
+.inputGroup label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+}
+
+.inputGroup input,
+.inputGroup select,
+.inputGroup option,
+.inputGroup textarea {
+    background-color: var(--white);
+    width: 100%;
+    color: var(--black);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.4em;
+    letter-spacing: 0.001em;
+    padding: 1rem 2rem;
+    border: 2px solid var(--black);
+    outline: none;
+    resize: none;
 }
 
 
- .btn{
+.Ud_form button {
     background-color: var(--black);
     color: var(--white);
     border: 2px solid var(--black);
-    
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
     cursor: pointer;
     font-family: 'Outfit', sans-serif;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: 400;
     line-height: 1.2em;
     letter-spacing: 0.01em;
     padding: 1.5rem;
 }
 
- .btn:hover, .activeBtn{
+.Ud_form button:hover {
     background-color: var(--white);
-   color: var(--black);
+    color: var(--black);
     transition: .2s ease-in-out;
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    gap: 1.5rem;
+}
+
+.tag {
+    color: var(--white);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-right: 2rem;
+    background-color: black;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    padding: 0.8rem 3rem 0.8rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.tag .crossIcon{
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    background-color: rgb(255, 35, 35);
+    font-size: 2.5rem;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.tag span{
+    cursor: pointer;
+}
+
+.formLine{
+    color: var(--black);
+    opacity: 0.4;
+    margin: 2rem 0rem;
 }

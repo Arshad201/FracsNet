@@ -6,45 +6,39 @@ import { BsInstagram } from "react-icons/bs";
 import { RiTwitterXLine } from "react-icons/ri";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { MotionDiv } from '../MotionDiv';
+import { formattingName } from '@/lib/utils/valueFormatting';
+import Settings from '../Settings/Settings';
+import { settingOptions_profileCard } from '@/lib/settings/profileCard';
 
-const ProfileCard = ({index, data}) => {
+const ProfileCard = ({ data }) => {
 
-    const variants = {
-      hidden: { opacity: 0 },
-      visible: {opacity: 1}
-  }
+  // const settingOptions = settingOptions_profileCard(data);
 
   return (
-    <MotionDiv
-    variants={variants}
-    initial = "hidden"
-    animate = "visible"
-    transition={{
-        delay: index*0.25,
-        ease: "easeInOut",
-        duration: 0.5
-    }}
-    className={style.ProfileCard}>
-        <div className={style.imgBox}>
-          <img src="/profile.jpg" alt="" />
-        </div>
-        <span className={style.level}>Pro</span>
-        <span className={style.userName}>{data.firstName} {data.lastName}</span>
-        <span className={style.role}>{data.role}</span>
-        <p className={style.bio}>{data.bio}.</p>
-        <div className={style.socialMediaLinks}>
+    <div className={style.ProfileCard}>
+      <div className={style.settings}>
+        <Settings settingOptions={[]} dataFromDB={data} />
+      </div>
+      <Link href={`/profile/${data.userName}`} className={style.imgBox}>
+        <img src={data.profilePic.url} alt="" />
+      </Link>
+      <span className={style.level}>{data.accountType}</span>
+      <span className={style.userName}>{formattingName(data)}</span>
+      {data.designation && <span className={style.role}>{data.designation}</span>}
+      {data.bio && <p className={style.bio}>{data.bio}</p>}
+      {/* <div className={style.socialMediaLinks}>
           <Link href={"/"}><GoGlobe className={style.socialIcon} /></Link>
           <Link href={"/"}><FaFacebookF className={style.socialIcon} /></Link>
           <Link href={"/"}><BsInstagram className={style.socialIcon} /></Link>
           <Link href={"/"}><RiTwitterXLine className={style.socialIcon} /></Link>
           <Link href={"/"}><FaLinkedinIn className={style.socialIcon} /></Link>
-        </div>
-        <div className={style.btns}>
-          <Link className={style.btn} href={"/"}>View Profile</Link>
-          <Link className={style.btn} href={"/"}>Connect</Link>
-        </div>
-        
-    </MotionDiv>
+        </div> */}
+      <div className={style.btns}>
+        {/* <Link className={style.btn} href={"/"}>View Profile</Link> */}
+        {/* <Link className={style.btn} href={"/"}>Connect</Link> */}
+      </div>
+
+    </div>
   )
 }
 

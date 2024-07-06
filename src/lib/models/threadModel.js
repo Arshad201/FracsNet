@@ -1,17 +1,45 @@
 const { default: mongoose } = require("mongoose");
 
 const threadSchema = new mongoose.Schema({
-  content: {
-    type: String,
-    required: true
-  },
-  media:{
+  threadText: {
     type: String,
   },
-  author: {
+  threadImage: [
+    {
+      public_id: {
+        type: String,
+      },
+      url: {
+        type: String,
+      }
+    }
+  ],
+  threadVideo: [
+    {
+      public_id: {
+        type: String,
+      },
+      url: {
+        type: String,
+      }
+    }
+  ],
+  youTubeVideo: {
+    type: String
+  },
+  files: [
+    {
+      public_id: {
+        type: String,
+      },
+      url: {
+        type: String,
+      }
+    }
+  ],
+  postedBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-    required: true
   },
   comments: [{
     type: mongoose.Schema.Types.ObjectId,
@@ -19,12 +47,17 @@ const threadSchema = new mongoose.Schema({
   }],
   likes: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Like'
+    ref: 'User'
   }],
   shares: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Share'
+    ref: 'User'
   }],
+  postedIn:
+  {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Group',
+  },
   createdAt: {
     type: Date,
     default: Date.now

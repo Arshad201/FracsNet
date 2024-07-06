@@ -1,7 +1,6 @@
 "use client"
 import style from './RecentBlog.module.css'
 import { useState } from 'react';
-import BlogPostCardSkeleton from '@/Components/Miscellaneous/BlogPostCard/BlogPostCardSkeleton';
 import { fetchLatestBlogPost } from '@/app/server-actions/blogpost/action';
 
 let page = 2;
@@ -35,11 +34,8 @@ const LoadMore = () => {
       <div className={style.blogs}>
               {data}
               {loading && 
-              <>
-              <BlogPostCardSkeleton/>
-              <BlogPostCardSkeleton/>
-              <BlogPostCardSkeleton/>
-              </>}
+              <>Loading...</>
+              }
       </div>
       <button onClick={loadingMorePost} className={style.btn}> {data.length === 3 ? "Load Less" : "Load More"}</button>
     </>

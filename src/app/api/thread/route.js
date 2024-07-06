@@ -12,7 +12,6 @@ export const GET  = async (req, {params}) =>{
         connectToDB();
 
         const threads = await Thread.find({})
-        .populate('author')
         .limit(limit)
         .skip((page - 1) * limit)
         .sort({ createdAt: -1 });
@@ -29,7 +28,7 @@ export const GET  = async (req, {params}) =>{
     } catch (error) {
 
         console.log(error)
-        NextResponse.json(error);
+        return NextResponse.json(error);
         
     }
 }

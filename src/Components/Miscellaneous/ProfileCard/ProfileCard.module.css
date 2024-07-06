@@ -1,12 +1,18 @@
 .ProfileCard{
-    border: 2px solid var(--black);
+    background-color: var(--white);
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem 2rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     /* align-items: center; */
     justify-content: center;
     text-align: center;
-    padding: 3rem;
+}
+
+.settings{
+    position: relative;
 }
 
 .ProfileCardSkeleton{
@@ -92,11 +98,30 @@
   line-height: 1.4em;
   letter-spacing: 0.001em;
   text-decoration: none;
-  background-color: var(--black);
   color: var(--white);
   padding: 1rem 2rem;
   width: 100%;
-  border: 2px solid var(--black);
+  cursor: pointer;
+}
+
+.greenBtn{
+    background-color: rgb(69, 125, 69);
+    border: 2px solid  rgb(69, 125, 69);
+}
+
+.blueBtn{
+    background-color: rgb(92, 92, 206);
+    border: 2px solid rgb(92, 92, 206);
+}
+
+.redBtn{
+    background-color: rgb(255, 68, 68);
+    border: 2px solid rgb(255, 68, 68);
+}
+
+.yellowBtn{
+    background-color: rgb(255, 109, 56);
+    border: 2px solid rgb(255, 109, 56);
 }
 
 .btn:hover{

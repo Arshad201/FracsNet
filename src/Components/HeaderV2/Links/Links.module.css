@@ -28,20 +28,20 @@
     transition: .5s ease-in-out;
 }
 
-.link:hover{
+.link:hover, .activeLink{
     color: var(--black);
     transition: .5s ease-in-out;
 }
 
-.link:hover::after{
+.link:hover::after, .activeLink::after{
     width: 100%;
     transition: .5s ease-in-out;
 }
 
-.active-link{
+/* .active-link{
     color: var(--black);
     position: relative;
-}
+} */
 
 .headerIcons{
     color: var(--black);

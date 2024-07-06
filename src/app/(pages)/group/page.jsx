@@ -8,35 +8,38 @@ import GroupCardSM from "@/Components/Miscellaneous/GroupCardSM/GroupCardSM";
 import BlogPostCardSM from "@/Components/Miscellaneous/BlogPostCardSM/BlogPostCardSM";
 import { Suspense } from "react";
 import GroupCreatorForm from "@/Components/GroupPageComponents/GroupCreatorForm/GroupCreatorForm";
+import { headers } from "next/headers";
 
 const GroupsPage = () => {
+
+  const headerList = headers();
+  const id = headerList.get("loggedInUser");
+
   return (
     <section className={style.homePrivate} >
       <div className="wrapper-width">
         <div className={style.contentGrid}>
           <div className={style.leftContent}>
             {/* Show Joined Groups */}
-            <GroupList />
+            <GroupList loggedInUser={id} listType={"joinedGroup"}/>
             {/* Show Joined groups */}
           </div>
           <div className={style.mainContent}>
             {/* Welcome Message with Promote Thread posting */}
-            <GroupCreatorForm/>
+            <GroupCreatorForm />
             {/* Map all posts */}
           </div>
           <div className={style.rightContent}>
-
-
-
+          
+        
             {/* Reommonded groups */}
-            <GroupList />
+            <GroupList loggedInUser={id} listType={"suggestedGroup"}/>
 
             {/* Sponsored Premium */}
             <div className={style.sponsered}>
               <h2 className="sectionHeading">Try premium FracsNet Today!</h2>
               <button className={style.btn}>Pricing</button>
             </div>
-
           </div>
         </div>
       </div>

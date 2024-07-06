@@ -1,8 +1,8 @@
 "use client"
 import style from './UnlimitedScrollFeed.module.css'
 import { useEffect, useState } from 'react';
-import PostCardSkeleton from '@/Components/Miscellaneous/PostCard/PostCardSkeleton';
-import { fetchRecentThread } from '@/app/server-actions/thread/action';
+import PostCardSkeleton from '@/Components/Miscellaneous/ThreadCard/PostCardSkeleton';
+import { fetchRecentThread } from '@/app/server-actions/thread/thread';
 import { useInView } from 'react-intersection-observer';
 
 let page = 2;

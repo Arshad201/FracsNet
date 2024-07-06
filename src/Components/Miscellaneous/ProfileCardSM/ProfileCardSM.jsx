@@ -1,19 +1,21 @@
 import Link from 'next/link';
 import style from './ProfileCardSM.module.css';
+import { formattingName } from '@/lib/utils/valueFormatting';
 
-const ProfileCardSM = () => {
+const ProfileCardSM = ({ data }) => {
+
   return (
     <div className={style.ProfileCardSM}>
-        <div className={style.leftPart}>
-                {/* Profile Photo  */}
-                <Link href={"/"} className={style.profileImgWrapper}>
-                    <img src="/profile.jpg" alt="" /> 
-                </Link>
-                <div className={style.metaData}>
-                    <Link href={"/"} className={style.userName}>John Doe</Link>
-                    <span className={style.postedOn}>Web Developer</span>
-                </div>
+      <div className={style.leftPart}>
+        {/* Profile Photo  */}
+        <Link href={`/profile/${data?.userName}`} className={style.profileImgWrapper}>
+          <img src={data?.profilePic?.url} alt="" />
+        </Link>
+        <div className={style.metaData}>
+          <Link href={`/profile/${data?.userName}`} className={style.userName}>{formattingName(data)}</Link>
+          <span className={style.postedOn}>{data?.designation ? data.designation : ""}</span>
         </div>
+      </div>
     </div>
   )
 }

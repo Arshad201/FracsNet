@@ -1,6 +1,34 @@
 .commentWrapper{
     margin-top: 2rem;
-    border-top: 2px solid var(--black);
+    padding-top: 2rem;
+}
+
+.userDetails{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.leftWrapper{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profileInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.postedOn{
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
 }
 
 .profilePic{
@@ -14,6 +42,7 @@
     border-radius: 20rem;
 }
 
+
 .heading{
     font-family: 'Outfit', sans-serif;
     font-size: 2rem;
@@ -21,15 +50,18 @@
     line-height: 1.2em;
     letter-spacing: 0.01em;
     margin-top: 3rem;
+    margin-bottom: 1rem;
 }
 
 .comment{
     border-left: 2px solid var(--black);
     margin: 0rem 0rem 0rem 2rem;
-    padding: 2rem 0rem 2rem 2rem;
+    padding: 3rem 0rem 2rem 2rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
+    break-inside: avoid;
+    background-color: var(--white);
 }
 
 .userDetails{
@@ -37,6 +69,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    position: relative;
 }
 
 .userDetails .name{
@@ -48,10 +81,9 @@
 }
 
 .commentBody{
-
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
 
 }
 
@@ -62,6 +94,10 @@
   font-weight: 400;
   line-height: 1.5em;
   letter-spacing: 0.001em;
+  border-radius: 1rem;
+  width: fit-content;
+  background-color: rgb(232, 232, 232);
+  padding: 1rem;
 }
 
 .commentBody .postedOn{
@@ -74,6 +110,7 @@
 
 .commentImg img{
     width: 80%;
+    border-radius: 1rem;
     
 }
 
@@ -94,6 +131,8 @@
     font-weight: 500;
     line-height: 1.2em;
     letter-spacing: 0.01em;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .btn{
@@ -117,4 +156,23 @@
       cursor: pointer;
       background-color: transparent;
     color: var(--black);
+  }
+
+  .loadMorebtn{
+    color: rgb(255, 35, 35);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5em;
+    letter-spacing: 0.001em;
+    text-decoration: underline;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    margin: 1rem 0rem 0rem 4rem;
+  }
+
+  .loadingIcon{
+    color: var(--black);
+    margin: 1.5rem 0rem 0rem 4rem;
   }

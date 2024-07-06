@@ -1,5 +1,4 @@
-const { default: mongoose } = require("mongoose");
-
+import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
   firstName: {
@@ -9,43 +8,36 @@ const userSchema = new mongoose.Schema({
     type: String,
   },
   userName: {
-    type: String
+    type: String,
+    unique: true ,
   },
   email: {
     type: String,
-    required: true,
-    unique: true
-  },
-  phoneNumber: {
-    type: String,
-    unique: true
+    required: true
   },
   profilePic: {
     public_id: {
       type: String,
-      default: "sample_id",
-      required: true,
     },
     url: {
       type: String,
-      default: "sample_url",
-      required: true,
-    },
+    }
   },
-  bgImage: {
+  bgPic: {
     public_id: {
       type: String,
-      default: "sample_id",
-      required: true,
     },
     url: {
       type: String,
-      default: "sample_url",
-      required: true,
-    },
+    }
   },
-  password: {
-    type: String,
+  promotionalVideo: {
+    public_id: {
+      type: String,
+    },
+    url: {
+      type: String,
+    }
   },
   featured: {
     type: Boolean,
@@ -54,247 +46,48 @@ const userSchema = new mongoose.Schema({
   bio: {
     type: String,
   },
-  role: {
-    type: String,
+  designation: {
+    type: String
   },
-  profileType: {
+  accountType: {
     type: String,
-    enum: ['Admin', 'User', 'Moderator'],
-    default: 'User'
+    default: "Gold",
+    enum: ["Silver", "Gold", "Platinum", "Diamond", "Admin"]
   },
   network: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   }],
-  education: {
-    school: [
-      {
-        name: {
-          type: String,
-          required: true
-        },
-        standard: {
-          type: String,
-          required: true
-        },
-        description: {
-          type: String,
-        },
-        startDate: {
-          type: Date,
-          required: true
-        },
-        endDate: {
-          type: Date,
-          required: true
-        }
-      }
-    ],
-    university: [
-      {
-        name: {
-          type: String,
-          required: true
-        },
-        degree: {
-          type: String,
-          required: true
-        },
-        description: {
-          type: String,
-        },
-        startDate: {
-          type: Date,
-          required: true
-        },
-        endDate: {
-          type: Date,
-          required: true
-        }
-      }
-    ]
+  joinedGroups: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Group'
+  }],
+  sendRequest:[{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }],
+  pendingRequest: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }],
+  password: {
+    type: String,
+    required: true,
+    select: false,
   },
-  work: [
-    {
-      designation: {
-        type: String,
-        required: true
-      },
-      companyName: {
-        type: String,
-        required: true
-      },
-      description: {
-        type: String,
-        required: true
-      },
-      startDate: {
-        type: Date,
-        required: true
-      },
-      endDate: {
-        type: Date,
-        required: true
-      }
-    }
-  ],
-  recentActivity: {
-    thread: [
-      {
-        activityName: {
-          type: String,
-        },
-        activityId: {
-          type: String,
-        },
-      }
-    ],
-    threadLike: [
-      {
-        activityName: {
-          type: String,
-        },
-        activityId: {
-          type: String,
-        },
-      }
-    ],
-    threadComment: [
-      {
-        activityName: {
-          type: String,
-        },
-        activityId: {
-          type: String,
-        },
-      }
-    ],
-    threadCommentLike: [
-      {
-        activityName: {
-          type: String,
-        },
-        activityId: {
-          type: String,
-        },
-      }
-    ],
-    threadReply: [
-      {
-        activityName: {
-          type: String,
-        },
-        activityId: {
-          type: String,
-        },
-      }
-    ],
-    threadReplyLike: [
-      {
-        activityName: {
-          type: String,
-        },
-        activityId: {
-          type: String,
-        },
-      }
-    ],
-    blogPost: [
-      {
-        activityName: {
-          type: String,
-        },
-        activityId: {
-          type: String,
-        },
-      }
-    ],
-    blogPostLike: [
-      {
-        activityName: {
-          type: String,
-        },
-        activityId: {
-          type: String,
-        },
-      }
-    ],
-    blogPostComment: [
-      {
-        activityName: {
-          type: String,
-        },
-        activityId: {
-          type: String,
-        },
-      }
-    ],
-    blogPostCommentLike: [
-      {
-        activityName: {
-          type: String,
-        },
-        activityId: {
-          type: String,
-        },
-      }
-    ],
-    blogPostReply: [
-      {
-        activityName: {
-          type: String,
-        },
-        activityId: {
-          type: String,
-        },
-      }
-    ],
-    blogPostReplyLike: [
-      {
-        activityName: {
-          type: String,
-        },
-        activityId: {
-          type: String,
-        },
-      }
-    ],
-    search: [
-      {
-        activityName: {
-          type: String,
-        },
-        activityId: {
-          type: String,
-        },
-      }
-    ],
-    connectionRequest: [
-      {
-        activityName: {
-          type: String,
-        },
-        activityId: {
-          type: String,
-        },
-      }
-    ]
-  },
-  socialLinks: [
-    {
-      name: {
-        type: String
-      },
-      url: {
-        type: String
-      }
-    }
-  ],
   createdAt: {
     type: Date,
     default: Date.now
   },
 });
 
+
+
+userSchema.pre('save', function(next) {
+  if (!this.userName) {
+    this.userName = "username_"+this._id.toString();
+  }
+  next();
+});
 
 export const User = mongoose.models.User || mongoose.model("User", userSchema);

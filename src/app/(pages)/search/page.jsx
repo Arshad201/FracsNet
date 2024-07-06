@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import style from './SearchPage.module.css';
 import ProfileCard from '@/Components/Miscellaneous/ProfileCard/ProfileCard';
-import PostCard from '@/Components/Miscellaneous/PostCard/PostCard';
+import PostCard from '@/Components/Miscellaneous/ThreadCard/ThreadCard';
 import BlogPostCard from '@/Components/Miscellaneous/BlogPostCard/BlogPostCard';
 import GroupCardSM from '@/Components/Miscellaneous/GroupCardSM/GroupCardSM';
 

@@ -1,43 +1,91 @@
+"use client";
+
+import { load_replies } from '@/app/server-actions/comments/comments';
 import style from './Reply.module.css';
+import ReplyCard from './ReplyCard';
+import { useContext, useEffect, useState } from 'react';
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { StateContext } from '@/app/context/State';
 
-import { BiLike, BiSolidLike } from "react-icons/bi";
-import CommentForm from '../CommentForm/CommentForm';
-import { useState } from 'react';
-import Comment_Skeleton from '../Comment/Comment_Skeleton';
 
-const Reply = () => {
+const Reply = ({ data }) => {
 
-    const [show, setShow] = useState(false);
+    const { allReplyIds, replyArr, setReplyArr } = useContext(StateContext);
 
-  return (
-    <div className={style.commentWrapper}>
-        <h6 className={style.heading}>4 Replies</h6>
-        <Comment_Skeleton/>
-        <div className={style.comment}>
-            <div className={style.userDetails}>
-                <div className={style.profilePic}>
-                    <img src="/profile.jpg" alt="" />
-                </div>
-                <span className={style.name}>John Doe</span>
-            </div>
-            <div className={style.commentBody}>
-                <div className={style.commentImg}>
-                    <img src="/profile.jpg" alt="" />
-                </div>
-                <p className={style.text}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quasi ipsam eum dolor error molestiae fugiat sequi, inventore adipisci eius impedit veritatis consequuntur vel, repellat a quia consequatur expedita. Facere numquam repellendus pariatur nam dolore laboriosam, magni nesciunt molestias dicta!</p>
-                <span className={style.postedOn}>3 minutes ago</span>
-            </div>
-            <div className={style.commentFooter}>
-                <div className={style.like}>
-                    <BiLike className={style.icon}/>
-                    3
-                </div>
-                <button className={style.btn} onClick={()=>setShow(!show)}>Reply</button>
-            </div>
+    const [loading, setLoading] = useState(false);
+    const [initialLoading, setInitialLoading] = useState(false);
+    const [totalPages, setTotalPages] = useState(1);
+    const [currentPage, setCurrentPage] = useState(2);
+
+    const loadReplies = async () => {
+
+
+        try {
+
+            setInitialLoading(true)
+            const res = await load_replies(allReplyIds, 1);
+            setReplyArr(res.replies);
+            setTotalPages(res.totalPages);
+            setInitialLoading(false)
+
+        } catch (error) {
+            setInitialLoading(false);
+            return { error: "Unable to load replies!" };
+        }
+    }
+
+
+    const handleLoadMore = async () => {
+
+        try {
+
+
+            setLoading(true);
+
+            if (currentPage <= totalPages) {
+                setCurrentPage(prev => prev + 1)
+            }
+
+            const res = await load_replies(allReplyIds, currentPage);
+            setReplyArr(prev => [...prev, ...res.replies])
+
+            if (currentPage > totalPages) {
+                setCurrentPage(2)
+                const res = await load_replies(allReplyIds, 1);
+                setReplyArr(res.replies)
+            }
+
+            setLoading(false);
+
+        } catch (error) {
+            setLoading(false)
+            return { error: "Unable to load replies!" };
+
+        }
+    }
+
+
+    useEffect(() => {
+        loadReplies();
+    }, []);
+
+
+    return (
+        <div className={style.commentWrapper}>
+
+            {<h6 className={style.heading}>{data.length} Replies</h6>}
+            {
+                initialLoading ? <AiOutlineLoading3Quarters className={`loadingIcon loadingM ${style.loadingIcon}`} />
+                    : replyArr?.map((data, index) => <ReplyCard key={index} data={data} />)
+            }
+            {
+                loading && <AiOutlineLoading3Quarters className={`loadingIcon loadingM ${style.loadingIcon}`} />
+            }
+            {(!loading && totalPages > 1) && <button className={style.loadMorebtn} onClick={handleLoadMore} >
+                {currentPage > totalPages ? "Load less replies" : "Load more replies"}
+            </button>}
         </div>
-        {show && <CommentForm type={"reply"}/>}
-    </div>
-  )
+    )
 }
 
 export default Reply

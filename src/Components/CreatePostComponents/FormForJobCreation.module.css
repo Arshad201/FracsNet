@@ -1,0 +1,504 @@
+.FormForThreadCreation {
+    background-color: var(--white);
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    padding: 3rem 2rem;
+}
+.threadCreation {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.body {
+    display: flex;
+    gap: 2rem;
+}
+
+.userProfile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profileImgWrapper {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50px;
+}
+
+.profileImgWrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+}
+
+.metaData {
+    display: flex;
+    flex-direction: column;
+}
+
+.userName {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+}
+
+.postedOn {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+}
+
+/* Form Styling  */
+
+
+.blogPostForm {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.inputGroup label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+}
+
+.inputGroup input {
+    color: var(--black);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.4em;
+    letter-spacing: 0.001em;
+    padding: 1rem 2rem;
+    border: 2px solid var(--black);
+    outline: none;
+}
+
+
+.blogPostForm .btn {
+    background-color: var(--black);
+    color: var(--white);
+    border: 2px solid var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+    padding: 1.5rem;
+}
+
+.blogPostForm .btn:hover {
+    background-color: var(--white);
+    color: var(--black);
+    transition: .2s ease-in-out;
+}
+
+
+
+
+
+.threadCreation {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.subHeading {
+    color: var(--black);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 400;
+    line-height: 1.5em;
+    letter-spacing: 0.001em;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+
+.form {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.hiddenInput {
+    display: none;
+}
+
+.formFeatures {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.formRightCol {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.options {
+    color: var(--black);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    border: 2px solid var(--black);
+    position: relative;
+    cursor: pointer;
+}
+
+.icons {
+    font-size: 2rem;
+}
+
+.options span {
+    color: var(--black);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+}
+
+.activeOption {
+    background-color: var(--black);
+}
+
+.activeOption .icons {
+    color: var(--white);
+}
+
+.activeOption span {
+    color: var(--white);
+}
+
+
+.form input[type="text"], 
+.form input[type="number"], 
+.form textarea, .form select, 
+.form option {
+    flex: 1;
+    width: 100%;
+    color: var(--black);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.4em;
+    letter-spacing: 0.001em;
+    padding: 1rem 2rem;
+    border: 2px solid var(--black);
+    outline: none;
+    resize: none;
+    background-color: var(--white);
+}
+
+
+.inputGroup{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0rem;
+}
+
+.inputGroup label{
+    color: var(--black);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.65rem;
+    font-weight: 500;
+    line-height: 1.4em;
+    letter-spacing: 0.001em;
+}
+
+.radioInput{
+    margin: 0.5rem 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.radioInput div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.radioInput label{
+    color: var(--black);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.4em;
+    letter-spacing: 0.001em;
+}
+
+.radioInput input {
+    accent-color: var(--black);
+    width: 1.8rem;
+    height: 1.8rem;
+    cursor: pointer;
+}
+
+
+.btn {
+    width: fit-content;
+    background-color: var(--black);
+    color: var(--white);
+    border: 2px solid var(--black);
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+}
+
+.listInputBox{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.listInput{
+    display: flex;
+}
+
+.listInput .btn{
+    background-color: rgb(255, 35, 35);
+    border-left: none;
+}
+
+.userProfile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profileImgWrapper {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50px;
+}
+
+.profileImgWrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+}
+
+.metaData {
+    display: flex;
+    flex-direction: column;
+}
+
+.userName {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+}
+
+.postedOn {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+}
+
+.uploadedItems {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 2rem 0rem;
+}
+
+.uploadedItems .image {
+    position: relative;
+}
+
+.uploadedItems .image img {
+    height: 7rem;
+    border-radius: 2rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.crossIcon {
+    font-size: 3rem;
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    color: var(--white);
+    background-color: var(--black);
+    padding: 0.7rem;
+    border-radius: 5rem;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.video {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-right: 2rem;
+    background-color: rgb(255, 35, 35);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+}
+
+.uploadedItems .icon {
+    font-size: 3rem;
+    color: var(--white);
+}
+
+.fileName {
+    color: var(--white);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+}
+
+
+.file {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-right: 2rem;
+    background-color: rgb(255, 185, 7);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+}
+
+.categories {
+    border: 2px solid var(--black);
+    border-top: none;
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+    max-height: 20rem;
+    overflow-y: scroll;
+}
+
+.categories span {
+    color: var(--black);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+    padding: 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.categories span:hover {
+    background-color: var(--black);
+    color: var(--white);
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+
+.categories span:last-child {
+    border: none;
+}
+
+.category input:focus .categories {
+    border: 2px solid red;
+}
+
+.tagForm {
+    display: flex;
+}
+
+.tagForm input {
+    flex: 1;
+}
+
+.tagForm button {
+    width: fit-content;
+    background-color: var(--black);
+    color: var(--white);
+    border: 2px solid var(--black);
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+    padding: 1rem 1.5rem;
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    gap: 1.5rem;
+}
+
+.tag {
+    color: var(--white);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-right: 2rem;
+    background-color: black;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.tag .crossIcon{
+    background-color: rgb(255, 35, 35);
+    font-size: 2.5rem;
+}

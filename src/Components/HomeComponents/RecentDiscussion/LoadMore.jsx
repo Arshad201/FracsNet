@@ -1,8 +1,7 @@
 "use client"
 import style from './RecentDiscussion.module.css'
 import { useState } from 'react';
-import PostCardSkeleton from '@/Components/Miscellaneous/PostCard/PostCardSkeleton';
-import { fetchRecentThread } from '@/app/server-actions/thread/action';
+import { fetchRecentThread } from '@/app/server-actions/thread/thread';
 
 let page = 2;
 const LoadMore = () => {
@@ -36,10 +35,7 @@ const LoadMore = () => {
       <div className={style.posts}>
               {data}
               {loading && 
-              <>
-              <PostCardSkeleton/>
-              <PostCardSkeleton/>
-              </>}
+              <>Loading...</>}
       </div>
       <button onClick={loadingMorePost} className={style.btn}> {data.length === 6 ? "Load Less" : "Load More"}</button>
     </>

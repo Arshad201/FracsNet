@@ -1,5 +1,5 @@
 import style from "./RecentDiscussion.module.css";
-import PostCardSkeleton from "@/Components/Miscellaneous/PostCard/PostCardSkeleton";
+import PostCardSkeleton from "@/Components/Miscellaneous/ThreadCard/PostCardSkeleton";
 
 const RecentDiscussionSkeleton = () => {
 

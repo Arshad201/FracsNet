@@ -1,0 +1,89 @@
+.messageHistory{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.messageHistory h3{
+    margin: 2rem 0rem;
+    color: var(--black);
+    font-family: 'Outfit', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.5em;
+    letter-spacing: 0.01em;
+}
+.user{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    border: 2px solid var(--black);
+    padding: 1rem;
+    text-decoration: none;
+}
+
+.userImage{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 10rem;
+    position: relative;
+    border: 2px solid rgb(0, 0, 0);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.userImage img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+}
+
+.active{
+    height: 1.3rem;
+    width: 1.3rem;
+    background-color: rgb(2, 206, 2);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 20rem;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.501);
+}
+
+.usernameWrapper{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.username {
+    color: var(--black);
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+}
+
+.activeText{
+    color: rgb(101, 101, 101);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.2em;
+    letter-spacing: 0.01em;
+}
+
+.lastmessage{
+    color: var(--black);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.5em;
+    letter-spacing: 0.001em;
+}

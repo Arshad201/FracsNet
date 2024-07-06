@@ -7,16 +7,16 @@ font-family: 'Work Sans', sans-serif;
 
 */
 
-*{
+* {
   padding: 0%;
   margin: 0%;
   box-sizing: border-box;
 }
 
-:root{
+:root {
   --white: white;
   --black: black;
-  --yellow:  rgb(255, 185, 7);
+  --yellow: rgb(255, 185, 7);
   --red: rgb(123, 0, 0);
   --green: rgb(0, 69, 0);
   --dimGray: #5A5A5A;
@@ -27,22 +27,23 @@ font-family: 'Work Sans', sans-serif;
   --gray: #696969;
 }
 
-html{
+html {
   font-size: 62.5%;
 }
 
-body{
+body {
   background-color: var(--white);
+  background-color: rgb(240, 240, 240);
   overflow-x: hidden;
 }
 
-.wrapper-width{
+.wrapper-width {
   width: 85%;
   margin: 0rem auto;
 }
 
 
-.sectionHeading{
+.sectionHeading {
   font-family: 'Outfit', sans-serif;
   font-size: 3.8rem;
   font-weight: 600;
@@ -61,7 +62,7 @@ body{
   max-width: 100%;
 }
 
-.loading > div {
+.loading>div {
   width: 10vmax;
   height: 10vmax;
   border-bottom: 5px solid var(--black);
@@ -71,25 +72,92 @@ body{
   animation: loadingRotate 800ms linear infinite;
 }
 
-.jodit-editor__resize{
+.jodit-editor__resize {
   display: none !important;
 }
 
-.jodit{
+.jodit {
   border: 2px solid black !important;
 }
 
-.jodit-workplace{
+.jodit-workplace {
   border-top: 2px solid var(--black) !important;
   border-bottom: 2px solid var(--black) !important;
 }
 
-.jodit-ui-button_variant_primary{
+.jodit-ui-button_variant_primary {
   background-color: var(--black) !important;
   border: none !important;
 }
 
 
+.loadingIcon {
+  animation: loadingRotate 800ms linear infinite;
+  color: var(--white);
+}
+
+.loadingDark {
+  color: var(--black);
+}
+
+.loadingSM {
+  font-size: 1.3rem;
+}
+
+.loadingM {
+  font-size: 1.6rem;
+}
+
+.cardloading {
+  margin: 2rem 0rem;
+}
+
+.cardloader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.Toastify__toast-body {
+  font-size: 2rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.2em;
+  letter-spacing: 0.01em;
+}
+
+.close-btn{
+font-family: 'Work Sans', sans-serif;
+font-size: 1.6rem;
+font-weight: 400;
+line-height: 1.4em;
+letter-spacing: 0.001em;
+text-decoration: none;
+background-color: var(--black);
+color: var(--white);
+padding: 1.2rem 2.5rem;
+width: fit-content;
+border: 2px solid var(--black);
+}
+
+.close-btn:hover{
+  background-color: transparent;
+  color: var(--black);
+  transition: .2s ease-in-out;
+  cursor: pointer;
+}
 @keyframes loadingRotate {
   to {
     transform: rotateZ(-360deg);
@@ -98,54 +166,49 @@ body{
 
 
 @media only screen and (max-width: 1920px) {
-  html{
+  html {
     font-size: 90%;
   }
 }
 
 @media only screen and (max-width: 1800px) {
-  html{
+  html {
     font-size: 87%;
   }
 }
 
 @media only screen and (max-width: 1700px) {
-  html{
+  html {
     font-size: 81%;
   }
 }
 
 @media only screen and (max-width: 1600px) {
-  html{
+  html {
     font-size: 75%;
   }
 }
 
 @media only screen and (max-width: 1500px) {
-  html{
+  html {
     font-size: 70%;
   }
 }
 
 @media only screen and (max-width: 1366px) {
-  html{
+  html {
     font-size: 62.5%;
   }
 }
 
 @media only screen and (max-width: 1280px) {
-  html{
+  html {
     font-size: 59.5%;
   }
 }
 
 @media only screen and (max-width: 1024px) {
-  .wrapper-width{
+  .wrapper-width {
     width: 90%;
   }
 }
-
-
-
-
-

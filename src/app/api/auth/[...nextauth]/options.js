@@ -28,24 +28,18 @@ export const authOptions = {
                     
                     const user = await User.findOne({
 
-                        // Filter data from optional value
-                        // $or:[
-                        //     {userName: credentials.identifier.userName},
-                        //     {email: credentials.identifier.email},
-                        // ]
-
                         //Filter data from a single value
                         email: credentials.email
-                    })
+                    }).select("+password")
 
                     //Throw Error if user is not found with this Email
                     if(!user){
-                         throw new Error("User not found");
+                         throw new Error("Invalid Credentials");
                     }
 
                     //Check the given password is correct or not 
                     const isCorrectPassword = await bcrypt.compare(credentials.password, user.password);
-
+                    
                     if(isCorrectPassword){
                         return user;
                     }else{
@@ -73,10 +67,10 @@ export const authOptions = {
 
             if(user){
                 token._id = user._id?.toString()
-                token.email = user.email
+                token.user = user
             }
 
-            return token;
+            return token; 
 
         },
         async session({session, token}){
@@ -84,14 +78,16 @@ export const authOptions = {
 
             if(token){
                 session.user._id = token._id?.toString()
-                session.user.email = token.email
+                delete token.user.password
+                session = token.user
             }
 
             return session;
         }
     },
     pages:{
-        signIn: '/login'
+        signIn: '/sign-in',
+        signUp: '/sign-up',
     },
     session:{
         strategy: "jwt"

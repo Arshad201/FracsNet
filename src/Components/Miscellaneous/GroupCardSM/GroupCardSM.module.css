@@ -1,33 +1,41 @@
-.GroupCardSM{
+.GroupCardSM {
     padding: 2rem;
     border-bottom: 2px solid var(--black);
+    background-color: var(--white);
+    padding: 2.5rem 2rem;
+    /* Masionary Item */
+    break-inside: avoid;
+    margin-bottom: 1rem;
+
 }
 
-.leftPart{
+.leftPart {
     display: flex;
     align-items: center;
     gap: 1rem;
+    position: relative;
+
 }
 
-.profileImgWrapper{
+.profileImgWrapper {
     width: 5rem;
     height: 5rem;
     border-radius: 50px;
 }
 
-.profileImgWrapper img{
+.profileImgWrapper img {
     width: 100%;
     height: 100%;
     border-radius: 50px;
 }
 
-.metaData{
+.metaData {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.userName{
+.userName {
     font-family: 'Outfit', sans-serif;
     font-size: 1.8rem;
     font-weight: 500;
@@ -35,7 +43,7 @@
     letter-spacing: 0.01em;
 }
 
-.groupName{
+.groupName {
     color: var(--black);
     text-decoration: none;
     font-family: 'Outfit', sans-serif;
@@ -45,7 +53,7 @@
     letter-spacing: 0.01em;
 }
 
-.btn{
+.btn {
     font-family: 'Work Sans', sans-serif;
     font-size: 1.4rem;
     font-weight: 400;
@@ -58,12 +66,20 @@
     width: fit-content;
     border: 2px solid var(--black);
     margin-top: 1rem;
-    
-  }
-  
-  .btn:hover{
-      background-color: transparent;
-      color: var(--black);
-      transition: .2s ease-in-out;
-      cursor: pointer;
-  }
+
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--black);
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+
+.rightPart {
+    cursor: pointer;
+}
+
+.iconsInPost {
+    font-size: 2rem;
+}

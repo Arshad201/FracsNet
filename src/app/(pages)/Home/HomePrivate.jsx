@@ -1,44 +1,33 @@
 import WelcomeToHome from "@/Components/HomeComponents/WelcomeToHome/WelcomeToHome";
 import style from "./HomePrivate.module.css";
-import UnlimitedScrollFeed from "@/Components/HomeComponents/UnlimitedScrollFeed/UnlimitedScrollFeed";
 import NetworkList from "@/Components/HomeComponents/NetworkList/NetworkList";
 import GroupList from "@/Components/HomeComponents/GroupList/GroupList";
-import ShortInfo from "@/Components/Miscellaneous/ShortInfo/ShortInfo";
-import GroupCardSM from "@/Components/Miscellaneous/GroupCardSM/GroupCardSM";
-import BlogPostCardSM from "@/Components/Miscellaneous/BlogPostCardSM/BlogPostCardSM";
 import { Suspense } from "react";
-import BlogPostCardSM_Skeleton from "@/Components/Miscellaneous/BlogPostCardSM/BlogPostCardSM_Skeleton";
+import LatestBlogPosts from "@/Components/HomeComponents/LatestBlogPosts/LatestBlogPosts";
+import UnlimitedHomeScrollFeed from "@/Components/HomeComponents/UnlimitedScrollFeed/UnlimitedScrollFeed";
 
-const HomePrivate = () => {
+const HomePrivate = async () => {
+
   return (
     <section className={style.homePrivate} >
       <div className="wrapper-width">
         <div className={style.contentGrid}>
           <div className={style.leftContent}>
-            {/* Show Connections */}
-            <Suspense fallback={<h1>Loading...</h1>}>
-              <NetworkList />
-            </Suspense>
-            <GroupList />
-            {/* Show Joined groups */}
+            <NetworkList />
+            <GroupList listType={"joinedGroup"} />
+
           </div>
           <div className={style.mainContent}>
-            {/* Welcome Message with Promote Thread posting */}
-            <WelcomeToHome />
-            {/* Map all posts */}
-            <UnlimitedScrollFeed />
+            <Suspense fallback={<>Loading profile...</>}>
+              <WelcomeToHome />
+            </Suspense>
+            <UnlimitedHomeScrollFeed />
           </div>
           <div className={style.rightContent}>
-            {/* Latest Blogpost */}
-            <div className={style.latestBlogPostWrapper}>
-              <h2 className={style.heading}>Latest Blogpost</h2>
-              <div className={style.latestBlogPost}>
-                <BlogPostCardSM_Skeleton />
-                <BlogPostCardSM />
-                <BlogPostCardSM />
-                <BlogPostCardSM />
-              </div>
-            </div>
+
+            <Suspense fallback={<>loading...</>}>
+              <LatestBlogPosts />
+            </Suspense>
 
             {/* Sponsored Premium */}
             <div className={style.sponsered}>

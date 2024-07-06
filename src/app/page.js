@@ -1,15 +1,18 @@
 import HomePrivate from "./(pages)/Home/HomePrivate"
-import HomePublic from "./(pages)/Home/HomePublic"
+// import HomePublic from "./(pages)/Home/HomePublic"
+import { GetSession } from "@/lib/utils/getSessionData";
 
-const Home = () => {
+const HomePage = async () => {
+
+  const loggedInUser = await GetSession();
 
   return (
     <>
-       
-      {/* <HomePublic/> */}
-      <HomePrivate/>
+      {
+        loggedInUser?._id ? <HomePrivate/> : <>Home Public</>
+      }
     </>
   )
 }
 
-export default Home
+export default HomePage

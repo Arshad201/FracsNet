@@ -18,3 +18,20 @@ export const login = async (prevState, formData) =>{
     }
 
 }
+
+export const signUpAction = async (prevState, formData) =>{
+
+    // const { email, password, confirmPassword } = Object.fromEntries(formData);
+
+    try {
+        
+        console.log(formData);
+
+        // await signIn("credentials",{ email, password });
+
+
+    } catch (err) {
+        console.log(err)
+    }
+
+}

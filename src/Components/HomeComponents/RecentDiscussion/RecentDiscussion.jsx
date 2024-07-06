@@ -1,6 +1,6 @@
 import style from "./RecentDiscussion.module.css";
 import LoadMore from "./LoadMore";
-import { fetchRecentThread } from "@/app/server-actions/thread/action";
+import { fetchRecentThread } from "@/app/server-actions/thread/thread";
 
 
 const RecentDiscussion = async() => {

@@ -1,0 +1,26 @@
+.guide {
+    background-color: var(--white);
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem 2rem;
+}
+
+.guide h2 {
+    text-align: left;
+    font-size: 2.5rem;
+}
+
+.guide ul {
+    margin-top: 2rem;
+}
+
+
+.guide li {
+    color: var(--black);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 400;
+    line-height: 1.5em;
+    letter-spacing: 0.001em;
+    margin: 0rem 0rem 1rem 1rem;
+}
